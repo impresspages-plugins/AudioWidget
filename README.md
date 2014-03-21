@@ -1,4 +1,4 @@
-plugin-audioWidget
+AudioWidget Plugin
 ==================
 
 Insert audio by uploading audio file or using SoundCloud.
