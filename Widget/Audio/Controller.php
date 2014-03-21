@@ -111,7 +111,7 @@ class Controller extends \Ip\WidgetController
         $form = $this->editForm();
 
         $variables = array(
-            'formHtml' => $form
+            'form' => $form
         );
         return ipView('snippet/edit.php', $variables)->render();
     }
@@ -119,6 +119,7 @@ class Controller extends \Ip\WidgetController
     protected function editForm()
     {
         $form = new \Ip\Form();
+        $form->addClass('ipsAudioForm');
 
         // Add values and indexes
         $values = array(

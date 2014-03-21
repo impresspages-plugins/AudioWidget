@@ -47,6 +47,7 @@ var IpWidget_Audio = function () {
         var context = this;
         this.popup = $('#ipWidgetAudioPopup');
         this.confirmButton = this.popup.find('.ipsConfirm');
+        this.form = this.popup.find('.ipsAudioForm');
         this.soundcloudUrl = this.popup.find('input[name=soundcloudUrl]');
         this.source = this.popup.find('select[name=source]');
 
@@ -60,8 +61,8 @@ var IpWidget_Audio = function () {
 
         this.popup.modal(); // open modal popup
 
-        this.confirmButton.off(); // ensure we will not bind second time
-        this.confirmButton.on('click', $.proxy(save, this));
+        this.confirmButton.off().on('click', function() {context.form.submit();});
+        this.form.off().on('submit', $.proxy(save, this));
 
         $this.popup.find('.ipsAudioFileList').html(''); // Delete file list
 //            this.popup.append(file); // TODO
@@ -104,8 +105,8 @@ var IpWidget_Audio = function () {
 
     };
 
-    var save = function () {
-
+    var save = function (e) {
+        e.preventDefault();
         var entry;
 
         var audioFiles = [];

@@ -8,7 +8,7 @@
                 </div>
 
                 <div class="modal-body">
-                    <?php echo $formHtml; ?>
+                    <?php echo $form->render(); ?>
 
                     <div class="ipsAudioFileList ui-sortable"></div>
                     <button type="button" class="btn btn-new btn btn-default ipAdminButton ipsUploadAudioFile"><?php echo __('Upload', 'ipAdmin') ?></button>
