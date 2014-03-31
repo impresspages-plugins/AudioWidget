@@ -28,13 +28,13 @@ class Controller extends \Ip\WidgetController
         return $postData;
     }
 
-    public function generateHtml($revisionId, $widgetId, $instanceId, $data, $skin)
+    public function generateHtml($revisionId, $widgetId, $data, $skin)
     {
         $audioHtml = $this->generateAudioHtml($data);
         if ($audioHtml) {
             $data['audioHtml'] = $audioHtml;
         }
-        return parent::generateHtml($revisionId, $widgetId, $instanceId, $data, $skin);
+        return parent::generateHtml($revisionId, $widgetId, $data, $skin);
     }
 
     protected function generateAudioHtml($data)
